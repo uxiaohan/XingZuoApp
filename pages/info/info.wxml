@@ -1,0 +1,394 @@
+<view class="content">
+  <view class="head-logo">
+    <view class="item">
+      <view class="item-img" style="background-color:{{keyItem.color}}">
+        <van-image custom-class="item-img-style" round width="106rpx" height="106rpx" fit="cover" src="/static/images/item-list/{{keyItem.key || xzList[0].key}}.png" />
+      </view>
+      <view class="item-text">
+        <view class="item-text-name">{{keyItem.name}}</view>
+        <view class="item-text-time">{{keyItem.time}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="con">
+    <view class="con-tab">
+      <van-tabs animated type="card" color="#fae361" title-active-color="#000" title-inactive-color="#5b5b5b" bind:change="tabChan">
+        <van-tab title="今日" name="today">
+          <view class="con-tab-content">
+            <view class="tabcon-head">
+              <view class="tabcon-item">
+                <text>综合运势</text>
+                <van-rate value="{{ todayObj.fortune.all }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>健康指数</text>
+                <text>{{ todayObj.index.health}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>事业学业</text>
+                <van-rate value="{{ todayObj.fortune.work }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>速配星座</text>
+                <text>{{ todayObj.luckyconstellation}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>爱情运势</text>
+                <van-rate value="{{ todayObj.fortune.love }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>幸运颜色</text>
+                <text>{{ todayObj.luckycolor}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>财富运势</text>
+                <van-rate value="{{ todayObj.fortune.money }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>幸运数字</text>
+                <text>{{ todayObj.luckynumber}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>短评</text>
+                <text>{{ todayObj.shortcomment}}</text>
+              </view>
+            </view>
+            <van-divider />
+            <view class="tabcon-con">
+              <view class="tabcon-con-item">
+                <van-tag color="#80bee4" size="large">
+                  <van-icon name="star" />综合运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{todayObj.fortunetext.all}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ea749e" size="large">
+                  <van-icon name="like" />爱情运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{todayObj.fortunetext.love}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ab92dc" size="large">
+                  <van-icon name="invitation" />事业学业
+                </van-tag>
+                <text class="tabcon-con-item-text">{{todayObj.fortunetext.work}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#f39f5b" size="large">
+                  <van-icon name="gold-coin" />财富运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{todayObj.fortunetext.money}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#7fbe58" size="large">
+                  <van-icon name="add-square" />健康运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{todayObj.fortunetext.health}}</text>
+              </view>
+            </view>
+          </view>
+        </van-tab>
+        <van-tab title="明日" name="nextday">
+          <view class="con-tab-content">
+            <view class="tabcon-head">
+              <view class="tabcon-item">
+                <text>综合运势</text>
+                <van-rate value="{{ nextdayObj.fortune.all }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>健康指数</text>
+                <text>{{ nextdayObj.index.health}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>事业学业</text>
+                <van-rate value="{{ nextdayObj.fortune.work }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>速配星座</text>
+                <text>{{ nextdayObj.luckyconstellation}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>爱情运势</text>
+                <van-rate value="{{ nextdayObj.fortune.love }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>幸运颜色</text>
+                <text>{{ nextdayObj.luckycolor}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>财富运势</text>
+                <van-rate value="{{ nextdayObj.fortune.money }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>幸运数字</text>
+                <text>{{ nextdayObj.luckynumber}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>短评</text>
+                <text>{{ nextdayObj.shortcomment}}</text>
+              </view>
+            </view>
+            <van-divider />
+            <view class="tabcon-con">
+              <view class="tabcon-con-item">
+                <van-tag color="#80bee4" size="large">
+                  <van-icon name="star" />综合运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{nextdayObj.fortunetext.all}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ea749e" size="large">
+                  <van-icon name="like" />爱情运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{nextdayObj.fortunetext.love}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ab92dc" size="large">
+                  <van-icon name="invitation" />事业学业
+                </van-tag>
+                <text class="tabcon-con-item-text">{{nextdayObj.fortunetext.work}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#f39f5b" size="large">
+                  <van-icon name="gold-coin" />财富运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{nextdayObj.fortunetext.money}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#7fbe58" size="large">
+                  <van-icon name="add-square" />健康运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{nextdayObj.fortunetext.health}}</text>
+              </view>
+            </view>
+          </view>
+        </van-tab>
+        <van-tab title="本周" name="week">
+          <view class="con-tab-content">
+            <view class="tabcon-head">
+              <view class="tabcon-item">
+                <text>综合运势</text>
+                <van-rate value="{{ weekObj.fortune.all }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>健康指数</text>
+                <van-rate value="{{ weekObj.fortune.health }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>事业学业</text>
+                <van-rate value="{{ weekObj.fortune.work }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>速配星座</text>
+                <text>{{ weekObj.luckyconstellation}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>爱情运势</text>
+                <van-rate value="{{ weekObj.fortune.love }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>幸运颜色</text>
+                <text>{{ weekObj.luckycolor}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>财富运势</text>
+                <van-rate value="{{ weekObj.fortune.money }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>提防星座</text>
+                <text>{{ weekObj.badconstellation}}</text>
+              </view>
+              <view class="tabcon-item">
+                <text>短评</text>
+                <text>{{ weekObj.shortcomment}}</text>
+              </view>
+            </view>
+            <van-divider />
+            <view class="tabcon-con">
+              <view class="tabcon-con-item">
+                <van-tag color="#80bee4" size="large">
+                  <van-icon name="star" />综合运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{weekObj.fortunetext.all}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ea749e" size="large">
+                  <van-icon name="like" />爱情运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{weekObj.fortunetext.love}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ab92dc" size="large">
+                  <van-icon name="invitation" />事业学业
+                </van-tag>
+                <text class="tabcon-con-item-text">{{weekObj.fortunetext.work}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#f39f5b" size="large">
+                  <van-icon name="gold-coin" />财富运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{weekObj.fortunetext.money}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#7fbe58" size="large">
+                  <van-icon name="add-square" />健康运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{weekObj.fortunetext.health}}</text>
+              </view>
+            </view>
+          </view>
+        </van-tab>
+        <van-tab title="本月" name="month">
+          <view class="con-tab-content">
+            <view class="tabcon-head">
+              <view class="tabcon-item">
+                <text>综合运势</text>
+                <van-rate value="{{ monthObj.fortune.all }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>健康指数</text>
+                <van-rate value="{{ monthObj.fortune.health }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>事业学业</text>
+                <van-rate value="{{ monthObj.fortune.work }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>爱情运势</text>
+                <van-rate value="{{ monthObj.fortune.love }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>财富运势</text>
+                <van-rate value="{{ monthObj.fortune.money }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text> </text>
+              </view>
+              <view class="tabcon-item">
+                <text>短评</text>
+                <text>{{ monthObj.shortcomment}}</text>
+              </view>
+            </view>
+            <van-divider />
+            <view class="tabcon-con">
+              <view class="tabcon-con-item">
+                <van-tag color="#80bee4" size="large">
+                  <van-icon name="star" />综合运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{monthObj.fortunetext.all}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ea749e" size="large">
+                  <van-icon name="like" />爱情运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{monthObj.fortunetext.love}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ab92dc" size="large">
+                  <van-icon name="invitation" />事业学业
+                </van-tag>
+                <text class="tabcon-con-item-text">{{monthObj.fortunetext.work}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#f39f5b" size="large">
+                  <van-icon name="gold-coin" />财富运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{monthObj.fortunetext.money}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#7fbe58" size="large">
+                  <van-icon name="add-square" />健康运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{monthObj.fortunetext.health}}</text>
+              </view>
+              <view class="tabcon-con-item" wx:if="{{monthObj.fortunetext.decompression}}">
+                <van-tag color="#60becd" size="large">
+                  <van-icon name="weapp-nav" />解压方式
+                </van-tag>
+                <text class="tabcon-con-item-text">{{monthObj.fortunetext.decompression}}</text>
+              </view>
+              <view class="tabcon-con-item" wx:if="{{monthObj.fortunetext.openluck}}">
+                <van-tag color="#f98c8c" size="large">
+                  <van-icon name="smile" />开运小秘诀
+                </van-tag>
+                <text class="tabcon-con-item-text">{{monthObj.fortunetext.openluck}}</text>
+              </view>
+            </view>
+          </view>
+        </van-tab>
+        <van-tab title="今年" name="year">
+          <view class="con-tab-content">
+            <view class="tabcon-head">
+              <view class="tabcon-item">
+                <text>综合运势</text>
+                <van-rate value="{{ yearObj.fortune.all }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>健康指数</text>
+                <van-rate value="{{ yearObj.fortune.health }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>事业学业</text>
+                <van-rate value="{{ yearObj.fortune.work }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>爱情运势</text>
+                <van-rate value="{{ yearObj.fortune.love }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>财富运势</text>
+                <van-rate value="{{ yearObj.fortune.money }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text> </text>
+              </view>
+              <view class="tabcon-item">
+                <text>短评</text>
+                <text>{{ yearObj.shortcomment}}</text>
+              </view>
+            </view>
+            <van-divider />
+            <view class="tabcon-con">
+              <view class="tabcon-con-item">
+                <van-tag color="#80bee4" size="large">
+                  <van-icon name="star" />综合运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{yearObj.fortunetext.all}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ea749e" size="large">
+                  <van-icon name="like" />爱情运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{yearObj.fortunetext.love}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ab92dc" size="large">
+                  <van-icon name="invitation" />事业学业
+                </van-tag>
+                <text class="tabcon-con-item-text">{{yearObj.fortunetext.work}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#f39f5b" size="large">
+                  <van-icon name="gold-coin" />财富运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{yearObj.fortunetext.money}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#7fbe58" size="large">
+                  <van-icon name="add-square" />健康运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{yearObj.fortunetext.health}}</text>
+              </view>
+              <view class="tabcon-con-item" wx:if="{{yearObj.fortunetext.openluck}}">
+                <van-tag color="#f98c8c" size="large">
+                  <van-icon name="smile" />开运小秘诀
+                </van-tag>
+                <text class="tabcon-con-item-text">{{yearObj.fortunetext.openluck}}</text>
+              </view>
+            </view>
+          </view>
+        </van-tab>
+      </van-tabs>
+    </view>
+  </view>
+</view>

@@ -1,9 +1,3 @@
-.content {
-  padding: 0 36rpx;
-  background-color: #f6e150;
-  margin-bottom: 68rpx;
-}
-
 .content .head {
   box-sizing: border-box;
   padding: 38rpx;
@@ -36,10 +30,6 @@
   letter-spacing: 12rpx;
 }
 
-.content .head .head-logo {
-  width: 188rpx;
-}
-
 /* .list */
 .content .list {
   box-sizing: border-box;
@@ -60,7 +50,6 @@
   justify-content: center;
   align-items: center;
   margin: 8rpx auto;
-  /* margin: 8rpx auto -10rpx; */
   width: 108rpx;
   height: 108rpx;
   box-sizing: border-box;
@@ -68,9 +57,10 @@
 }
 
 .content .list .item .item-img .item-img-style {
+  margin-top: 8rpx;
   box-sizing: border-box;
   padding: 6rpx;
-  border: dashed 6rpx #fff;
+  border: dashed 4rpx #fff;
 }
 
 .content .list .item .item-name {
@@ -83,9 +73,4 @@
   font-size: 26rpx;
   color: #f07796;
   font-weight: bolder;
-}
-
-
-.footer {
-  height: 58rpx;
 }

@@ -1,10 +1,12 @@
-// pages/home/home.js
+import {
+  get
+} from '../../utils/request'
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    value: 3,
     xzList: [{
         "key": "aries",
         "name": "白羊座",
@@ -77,26 +79,45 @@ Page({
         "time": "2.19-3.20",
         "color": "#7cbd9e"
       }
-    ]
+    ],
+    keyItem: {},
+    todayKey: false,
+    nextdayKey: false,
+    weekKey: false,
+    monthKey: false,
+    yearKey: false,
+    todayObj: {},
+    nextdayObj: {},
+    weekObj: {},
+    monthObj: {},
+    yearObj: {}
   },
-  goPage({
-    currentTarget: {
-      dataset: {
-        itemkey
-      }
-    }
-  }) {
-    wx.navigateTo({
-      url: `/pages/info/info?xzKey=${itemkey}`,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    const keyItem = this.data.xzList.filter(itm => itm.key == options.xzKey)[0]
+    this.setData({
+      keyItem
+    })
+    wx.setNavigationBarTitle({
+      title: `${keyItem.name}运势详情`,
+    })
+    this.getData('today')
   },
-
+  // Tab切换事件
+  tabChan(e) {
+    this.getData(e.detail.name)
+  },
+  async getData(e) {
+    if (this.data[`${e}Key`]) return 0;
+    const res = await get(`type=${this.data.keyItem.key}&time=${e}`);
+    res.success && this.setData({
+      [`${e}Key`]: true,
+      [`${e}Obj`]: res.data
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -143,6 +164,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    分享页面
   }
 })

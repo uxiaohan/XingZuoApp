@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/info/info"
   ],
   "tabBar": {
     "list": [{

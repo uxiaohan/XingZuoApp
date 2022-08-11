@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "星座运势",
   "usingComponents": {
     "van-image": "@vant/weapp/image/index"
   }
