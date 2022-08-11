@@ -102,7 +102,7 @@ Page({
       keyItem
     })
     wx.setNavigationBarTitle({
-      title: `${keyItem.name}运势详情`,
+      title: `${keyItem.name}运势详解`,
     })
     this.getData('today')
   },
@@ -164,6 +164,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-    分享页面
+    return {
+      title: `${this.data.keyItem.name}运势详解`,
+      path: `/pages/info/info?xzKey=${this.data.keyItem.key}`,
+      imageUrl: `/static/images/shareBanner/${this.data.keyItem.key}.jpg`
+    }
   }
 })

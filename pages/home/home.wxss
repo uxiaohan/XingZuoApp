@@ -1,6 +1,6 @@
 .content .head {
   box-sizing: border-box;
-  padding: 38rpx;
+  padding:0 38rpx 16rpx;
   display: flex;
   justify-content: space-around;
   align-items: center;
