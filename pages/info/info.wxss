@@ -50,9 +50,18 @@
   background-color: #fbfbef;
 }
 
+
 .content .con .con-tab .con-tab-content {
   box-sizing: border-box;
   padding: 36rpx;
+}
+
+.content .con .con-tab .con-tab-content .today-time {
+  width: 100%;
+  color: #5b5b5b;
+  font-size: 28rpx;
+  padding-bottom: 8rpx;
+  font-weight: bolder;
 }
 
 .tabcon-head {

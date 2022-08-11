@@ -15,6 +15,7 @@
       <van-tabs animated type="card" color="#fae361" title-active-color="#000" title-inactive-color="#5b5b5b" bind:change="tabChan">
         <van-tab title="今日" name="today">
           <view class="con-tab-content">
+            <view class="today-time">今日：{{todayObj.time}}</view>
             <view class="tabcon-head">
               <view class="tabcon-item">
                 <text>综合运势</text>
