@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/mine/mine"
+  ],
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/home/home",
+        "iconPath": "/static/images/tabar/home.png",
+        "selectedIconPath": "/static/images/tabar/homei.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "/static/images/tabar/mine.png",
+        "selectedIconPath": "/static/images/tabar/minei.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f6e150",
+    "navigationBarTitleText": "星座运势",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,23 @@
+<view class="content">
+  <view class="head">
+    <view class="head-text">
+      <view class="tips">桃白白十二星座运势</view>
+      <view class="tips-tips">超好用的星座运势</view>
+    </view>
+    <image class="head-logo" src="../../static/images/head_logo.png" mode="widthFix" />
+  </view>
+  <view class="list">
+    <view class="item" wx:for="{{xzList}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
+      <view class="item-img" style="background-color:{{item.color}}">
+      <!-- <view class="item-img"> -->
+        <van-image custom-class="item-img-style" round width="88rpx" height="88rpx" fit="cover" src="/static/images/item-list/{{item.key}}.png" />
+        <!-- <van-image custom-class="item-img-style" round width="108rpx" height="108rpx" fit="cover" src="/static/images/list-img/s_{{idx+1}}.png" /> -->
+      </view>
+      <view class="item-name">{{item.name}}</view>
+      <view class="item-time">{{item.time}}</view>
+    </view>
+  </view>
+  <view class="footer">
+  
+  </view>
+</view>
