@@ -389,6 +389,52 @@
             </view>
           </view>
         </van-tab>
+        <van-tab title="爱情" name="love">
+          <view class="con-tab-content">
+            <view class="tabcon-head">
+              <view class="tabcon-item">
+                <text>综合运势</text>
+                <van-rate value="{{ loveObj.fortune.all }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>女生指数</text>
+                <van-rate value="{{ loveObj.fortune.girl }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>男生指数</text>
+                <van-rate value="{{ loveObj.fortune.boy }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text> </text>
+              </view>
+              <view class="tabcon-item">
+                <text>短评</text>
+                <text>{{ loveObj.shortcomment}}</text>
+              </view>
+            </view>
+            <van-divider />
+            <view class="tabcon-con">
+              <view class="tabcon-con-item">
+                <van-tag color="#80bee4" size="large">
+                  <van-icon name="star" />综合运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{loveObj.fortunetext.all}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ed85aa" size="large">
+                  <van-icon name="like" />♀女生
+                </van-tag>
+                <text class="tabcon-con-item-text">{{loveObj.fortunetext.girl}}</text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#80bee4" size="large">
+                  <van-icon name="smile" />♂男生
+                </van-tag>
+                <text class="tabcon-con-item-text">{{loveObj.fortunetext.boy}}</text>
+              </view>
+            </view>
+          </view>
+        </van-tab>
       </van-tabs>
     </view>
   </view>

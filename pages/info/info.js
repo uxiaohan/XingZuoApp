@@ -86,11 +86,13 @@ Page({
     weekKey: false,
     monthKey: false,
     yearKey: false,
+    loveKey: false,
     todayObj: {},
     nextdayObj: {},
     weekObj: {},
     monthObj: {},
-    yearObj: {}
+    yearObj: {},
+    loveObj: {}
   },
 
   /**

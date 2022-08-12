@@ -107,7 +107,6 @@
 
 
 
-
 /* Tab选中字体 */
 .van-tab--active .van-ellipsis {
   font-weight: bolder;
