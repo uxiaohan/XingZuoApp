@@ -143,6 +143,18 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    return {
+      title: '星座运势丨星座速配',
+      path: '/pages/home/home',
+      imageUrl: '/static/images/shareBanner/home.png'
+    }
+  },
+  // 分享至朋友圈
+  onShareTimeline() {
+    return {
+      title: "星座运势丨星座速配",
+      query: {},
+      imageUrl: "/static/images/shareBanner/home.png"
+    }
   }
 })

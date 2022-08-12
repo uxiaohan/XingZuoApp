@@ -169,5 +169,15 @@ Page({
       path: `/pages/info/info?xzKey=${this.data.keyItem.key}`,
       imageUrl: `/static/images/shareBanner/${this.data.keyItem.key}.jpg`
     }
+  },
+  // 分享至朋友圈
+  onShareTimeline() {
+    return {
+      title: `${this.data.keyItem.name}运势详解`,
+      query: {
+        xzKey: this.data.keyItem.key
+      },
+      imageUrl: `/static/images/shareBanner/${this.data.keyItem.key}.jpg`
+    }
   }
 })
