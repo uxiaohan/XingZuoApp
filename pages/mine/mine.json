@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "底层支持",
-  "usingComponents": {}
+  "usingComponents": {
+    "tab-bar": "/components/tarbar/tabbar"
+  }
 }

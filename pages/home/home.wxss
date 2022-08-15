@@ -1,6 +1,6 @@
 .content .head {
   box-sizing: border-box;
-  padding:0 38rpx 16rpx;
+  padding: 0 38rpx 16rpx;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -38,7 +38,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 16rpx;
   border-radius: 18rpx;
-  background-color: #fbfbef;
+  /* background-color: #fbfbef; */
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .content .list .item {

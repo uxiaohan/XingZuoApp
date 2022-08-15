@@ -1,10 +1,11 @@
 // pages/home/home.js
+const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    selTheme: app.globalData.selectTheme,
     xzList: [{
         "key": "aries",
         "name": "白羊座",
@@ -79,6 +80,11 @@ Page({
       }
     ]
   },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad() {},
+  // 页面跳转
   goPage({
     currentTarget: {
       dataset: {
@@ -91,13 +97,6 @@ Page({
     })
   },
   /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
-  },
-
-  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
@@ -108,7 +107,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    app.selectTheme()
   },
 
   /**

@@ -1,0 +1,34 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 12rpx 16rpx;
+  position: fixed;
+  width: 80%;
+  left: 10%;
+  bottom: 68rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+  overflow: hidden;
+}
+
+.footer .footer-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  height: 76rpx;
+  border-radius: 100rpx;
+}
+
+.footer .bar-active {
+  background-color: #91b9ec;
+}
+
+.footer .footer-item image {
+  height: 68rpx;
+  padding-right: 16rpx;
+}

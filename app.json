@@ -4,24 +4,14 @@
     "pages/mine/mine",
     "pages/info/info"
   ],
-  "tabBar": {
-    "list": [{
-        "pagePath": "pages/home/home",
-        "iconPath": "/static/images/tabar/home.png",
-        "selectedIconPath": "/static/images/tabar/homei.png"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "iconPath": "/static/images/tabar/mine.png",
-        "selectedIconPath": "/static/images/tabar/minei.png"
-      }
-    ]
-  },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fae361",
+    "navigationBarBackgroundColor": "#91b9ec",
     "navigationBarTitleText": "星座运势",
     "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-transition": "@vant/weapp/transition/index"
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,4 +1,7 @@
 // app.js
+import {
+  themes
+} from '/utils/themes'
 App({
   onLaunch() {
     // 展示本地存储能力
@@ -22,7 +25,24 @@ App({
       // 新版本下载失败
     });
   },
+  selectTheme() {
+    const _theme = themes['blue'];
+    this.globalData.selectTheme = _theme
+    wx.setBackgroundColor({
+      backgroundColor: _theme.background,
+    }), wx.setNavigationBarColor({
+      backgroundColor: _theme.background,
+      frontColor: _theme.titleColor,
+    })
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    selectTheme: {
+      background: '#91b9ec',
+      titleColor: '#ffffff',
+      imgKey: 'blue',
+      headFont: '#ffffff',
+      listBackground: '#e9f1fb'
+    }
   }
 })

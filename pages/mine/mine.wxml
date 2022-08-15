@@ -2,3 +2,4 @@
   <view>数据来源：韩小韩API接口</view>
   <view>接口地址：Api.Vvhan.Com</view>
 </view>
+<tab-bar pageKey="mine" />

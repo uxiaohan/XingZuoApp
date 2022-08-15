@@ -47,7 +47,7 @@
   box-sizing: border-box;
   padding: 36rpx 0rpx 56rpx;
   border-radius: 18rpx;
-  background-color: #fbfbef;
+  background-color: #fff;
 }
 
 
@@ -113,9 +113,9 @@
 }
 
 /* Tab整体背景颜色 */
-.van-tabs__scroll {
+/* .van-tabs__scroll {
   background-color: #fbfbef !important;
-}
+} */
 
 /* 去除整体Border */
 .van-tabs__scroll--card,

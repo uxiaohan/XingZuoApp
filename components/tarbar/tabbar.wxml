@@ -1,0 +1,16 @@
+<van-transition name="fade-up">
+  <view class="footer">
+    <view class="footer-item" style="background-color: {{pageKey=='home'?selTheme.background:'#ffffff'}};" data-pagekey="home" bindtap="goTabPage">
+      <image src="/static/images/tabar/bar-home.png" mode="heightFix" />
+      <text>运势</text>
+    </view>
+    <view class="footer-item" style="background-color: {{pageKey=='other'?selTheme.background:'#ffffff'}};" data-pagekey="other" bindtap="goTabPage">
+      <image src="/static/images/tabar/bar-other.png" mode="heightFix" />
+      <text>星座</text>
+    </view>
+    <view class="footer-item" style="background-color: {{pageKey=='mine'?selTheme.background:'#ffffff'}};" data-pagekey="mine" bindtap="goTabPage">
+      <image src="/static/images/tabar/bar-mine.png" mode="heightFix" />
+      <text>我的</text>
+    </view>
+  </view>
+</van-transition>

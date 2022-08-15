@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "星座运势",
   "usingComponents": {
+    "tab-bar": "/components/tarbar/tabbar",
     "van-image": "@vant/weapp/image/index"
   }
 }

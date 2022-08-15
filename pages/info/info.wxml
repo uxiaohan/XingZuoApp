@@ -1,18 +1,18 @@
-<view class="content">
+<view class="content" style="background-color: {{selTheme.background}};">
   <view class="head-logo">
     <view class="item">
       <view class="item-img" style="background-color:{{keyItem.color}}">
         <van-image custom-class="item-img-style" round width="106rpx" height="106rpx" fit="cover" src="/static/images/item-list/{{keyItem.key || xzList[0].key}}.png" />
       </view>
       <view class="item-text">
-        <view class="item-text-name">{{keyItem.name}}</view>
-        <view class="item-text-time">{{keyItem.time}}</view>
+        <view class="item-text-name" style="color: {{selTheme.headFont}};">{{keyItem.name}}</view>
+        <view class="item-text-time" style="color: {{selTheme.headFont}};">{{keyItem.time}}</view>
       </view>
     </view>
   </view>
-  <view class="con">
+  <view class="con" style="background-color: {{selTheme.listBackground}};">
     <view class="con-tab">
-      <van-tabs animated type="card" color="#fae361" title-active-color="#000" title-inactive-color="#5b5b5b" bind:change="tabChan">
+      <van-tabs animated type="card" color="#91b9ec" title-active-color="#000" title-inactive-color="#5b5b5b" bind:change="tabChan">
         <van-tab title="今日" name="today">
           <view class="con-tab-content">
             <view class="today-time">今日：{{todayObj.time}}</view>
