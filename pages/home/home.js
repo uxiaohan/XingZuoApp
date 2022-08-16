@@ -147,7 +147,7 @@ Page({
     return {
       title: '星座运势丨星座速配',
       path: '/pages/home/home',
-      imageUrl: '/static/images/shareBanner/home.png'
+      imageUrl: '/static/images/shareBanner/xingzuo/home.png'
     }
   },
   // 分享至朋友圈
@@ -155,7 +155,7 @@ Page({
     return {
       title: "星座运势丨星座速配",
       query: {},
-      imageUrl: "/static/images/shareBanner/home.png"
+      imageUrl: "/static/images/shareBanner/xingzuo/home.png"
     }
   }
 })
