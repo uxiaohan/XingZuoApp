@@ -10,8 +10,8 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/info/info",
-          "query": "xzKey=leo",
+          "pathName": "pages/about/about",
+          "query": "",
           "launchMode": "default",
           "scene": null
         }

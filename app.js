@@ -25,24 +25,21 @@ App({
       // 新版本下载失败
     });
   },
+  // 切换主题
   selectTheme() {
-    const _theme = themes['blue'];
-    this.globalData.selectTheme = _theme
+    const themeArr = ['purple', 'red', 'pink', 'yellow', 'green', 'blue', 'qing'];
+    const weekIdx = new Date().getDay();
+    // const weekIdx = 3;
+    const _theme = themes[themeArr[weekIdx]];
     wx.setBackgroundColor({
       backgroundColor: _theme.background,
     }), wx.setNavigationBarColor({
       backgroundColor: _theme.background,
       frontColor: _theme.titleColor,
     })
+    return _theme;
   },
   globalData: {
-    userInfo: null,
-    selectTheme: {
-      background: '#91b9ec',
-      titleColor: '#ffffff',
-      imgKey: 'blue',
-      headFont: '#ffffff',
-      listBackground: '#e9f1fb'
-    }
+    selectTheme: themes['pink']
   }
 })

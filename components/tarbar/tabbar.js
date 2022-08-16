@@ -10,7 +10,15 @@ Component({
       value: 0
     }
   },
-
+  // 声明周期函数
+  pageLifetimes: {
+    // 组件所在页面的生命周期函数
+    show: function () {
+      this.setData({
+        selTheme: app.selectTheme()
+      })
+    }
+  },
   /**
    * 组件的初始数据
    */
@@ -29,6 +37,7 @@ Component({
         }
       }
     }) {
+      if (pagekey == this.data.pageKey) return 0;
       wx.reLaunch({
         url: `/pages/${pagekey}/${pagekey}`
       })

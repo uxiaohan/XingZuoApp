@@ -2,15 +2,15 @@
   <view class="footer">
     <view class="footer-item" style="background-color: {{pageKey=='home'?selTheme.background:'#ffffff'}};" data-pagekey="home" bindtap="goTabPage">
       <image src="/static/images/tabar/bar-home.png" mode="heightFix" />
-      <text>运势</text>
+      <text style="color: {{pageKey=='home'?selTheme.headFont:'#000000'}};">星座</text>
     </view>
-    <view class="footer-item" style="background-color: {{pageKey=='other'?selTheme.background:'#ffffff'}};" data-pagekey="other" bindtap="goTabPage">
-      <image src="/static/images/tabar/bar-other.png" mode="heightFix" />
-      <text>星座</text>
+    <view class="footer-item" style="background-color: {{pageKey=='shengxiao'?selTheme.background:'#ffffff'}};" data-pagekey="shengxiao" bindtap="goTabPage">
+      <image src="/static/images/tabar/bar-shengxiao.png" mode="heightFix" />
+      <text style="color: {{pageKey=='shengxiao'?selTheme.headFont:'#000000'}};">生肖</text>
     </view>
-    <view class="footer-item" style="background-color: {{pageKey=='mine'?selTheme.background:'#ffffff'}};" data-pagekey="mine" bindtap="goTabPage">
-      <image src="/static/images/tabar/bar-mine.png" mode="heightFix" />
-      <text>我的</text>
+    <view class="footer-item" style="background-color: {{pageKey=='about'?selTheme.background:'#ffffff'}};" data-pagekey="about" bindtap="goTabPage">
+      <image src="/static/images/tabar/bar-about.png" mode="heightFix" />
+      <text style="color: {{pageKey=='about'?selTheme.headFont:'#000000'}};">关于</text>
     </view>
   </view>
 </van-transition>

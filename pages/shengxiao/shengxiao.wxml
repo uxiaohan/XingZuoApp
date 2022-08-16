@@ -1,0 +1,18 @@
+<view class="content" style="background-color: {{selTheme.background}};">
+  <view class="head">
+    <view class="head-text">
+      <view class="tips" style="color: {{selTheme.headFont}};border-color:{{selTheme.headFont}};">十二生肖运势</view>
+      <view class="tips-tips" style="color: {{selTheme.headFont}};">最全面的生肖运势</view>
+    </view>
+    <van-image width="158rpx" height="158rpx" fit="cover" src="/static/images/headlogo/shengxiao/{{selTheme.imgKey}}.png" />
+  </view>
+  <view class="list">
+    <view class="item" wx:for="{{xzList}}" wx:for-item="item" wx:for-index="idx" wx:key="idx" data-itemkey="{{item.key}}" bindtap="goPage">
+      <view class="item-img" style="background-color:{{item.color}}">
+        <van-image custom-class="item-img-style" round width="88rpx" height="88rpx" fit="cover" src="/static/images/shengxiao-list/{{item.key}}.png" />
+      </view>
+      <view class="item-name">{{item.name}}</view>
+    </view>
+  </view>
+</view>
+<tab-bar pageKey="shengxiao" />

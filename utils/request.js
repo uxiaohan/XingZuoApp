@@ -1,5 +1,5 @@
 const request = (_url, options) => {
-  const url = `https://api.vvhan.com/api/horoscope?${_url}`
+  const url = `https://api.vvhan.com/api/${_url}`
   return new Promise((resolve) => {
     options.isLoading && wx.showLoading({
       title: '正在加载',

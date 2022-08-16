@@ -1,0 +1,82 @@
+<view class="content" style="background-color: {{selTheme.background}};">
+  <view class="head-logo">
+    <view class="item">
+      <view class="item-img" style="background-color:{{keyItem.color}}">
+        <van-image custom-class="item-img-style" round width="106rpx" height="106rpx" fit="cover" src="/static/images/shengxiao-list/{{keyItem.key || xzList[0].key}}.png" />
+      </view>
+      <view class="item-text">
+        <view class="item-text-name" style="color: {{selTheme.headFont}};">{{keyItem.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="con">
+    <view class="con-tab">
+      <van-tabs animated active="{{tabActive}}" type="card" color="{{selTheme.background}}" title-active-color="#000" title-inactive-color="#5b5b5b">
+        <van-tab title="{{idx+1}}月" name="{{idx}}" wx:for="{{objValue.fortune}}" wx:for-index="idx" wx:for-item="itm" wx:key="idx">
+          <view class="con-tab-content">
+            <view class="today-time">
+              <view>年份：{{objValue.currentYear}}年 {{itm.month}}</view>
+              <view>{{itm.monthSec}}</view>
+            </view>
+            <view class="tabcon-head">
+              <view class="tabcon-item">
+                <text>综合运势</text>
+                <van-rate value="{{ objValue.fortuneIndex }}" size="{{ 12 }}" color="#ffd21e" void-icon="star" void-color="#eee" />
+              </view>
+              <view class="tabcon-item">
+                <text>　</text>
+              </view>
+              <view class="tabcon-item" style="width: 100%;">
+                <text>本月运势</text>
+                <text>{{ itm.content}}</text>
+              </view>
+            </view>
+            <van-divider />
+            <view class="tabcon-con">
+              <view class="tabcon-con-item">
+                <van-tag color="#dd4f4f" size="large">
+                  <van-icon name="star" />运程综述
+                </van-tag>
+                <text class="tabcon-con-item-text">{{objValue.transportation.content}}</text>
+                <view></view>
+                <text class="tabcon-con-item-openluck">开运小妙招：<text>{{objValue.transportation.openluck}}</text></text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ab92dc" size="large">
+                  <van-icon name="invitation" />事业学业
+                </van-tag>
+                <text class="tabcon-con-item-text">{{objValue.work.content}}</text>
+                <view></view>
+                <text class="tabcon-con-item-openluck">开运小妙招：<text>{{objValue.work.openluck}}</text></text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#ea749e" size="large">
+                  <van-icon name="like" />爱情运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{objValue.love.content}}</text>
+                <view></view>
+                <text class="tabcon-con-item-openluck">开运小妙招：<text>{{objValue.love.openluck}}</text></text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#79cb95" size="large">
+                  <van-icon name="add-square" />健康运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{objValue.health.content}}</text>
+                <view></view>
+                <text class="tabcon-con-item-openluck">开运小妙招：<text>{{objValue.health.openluck}}</text></text>
+              </view>
+              <view class="tabcon-con-item">
+                <van-tag color="#f39f5b" size="large">
+                  <van-icon name="gold-coin" />财富运势
+                </van-tag>
+                <text class="tabcon-con-item-text">{{objValue.money.content}}</text>
+                <view></view>
+                <text class="tabcon-con-item-openluck">开运小妙招：<text>{{objValue.money.openluck}}</text></text>
+              </view>
+            </view>
+          </view>
+        </van-tab>
+      </van-tabs>
+    </view>
+  </view>
+</view>

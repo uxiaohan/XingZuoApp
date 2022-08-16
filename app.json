@@ -1,12 +1,14 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/mine/mine",
-    "pages/info/info"
+    "pages/about/about",
+    "pages/xingzuoinfo/xingzuoinfo",
+    "pages/shengxiao/shengxiao",
+    "pages/shengxiaoinfo/shengxiaoinfo"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#91b9ec",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "星座运势",
     "navigationBarTextStyle": "black"
   },

@@ -4,12 +4,12 @@
       <view class="tips" style="color: {{selTheme.headFont}};border-color:{{selTheme.headFont}};">桃白白十二星座运势</view>
       <view class="tips-tips" style="color: {{selTheme.headFont}};">超好用的星座运势</view>
     </view>
-    <van-image width="188rpx" height="188rpx" fit="cover" src="/static/images/headlogo/{{selTheme.imgKey}}.png" />
+    <van-image width="188rpx" height="188rpx" fit="cover" src="/static/images/headlogo/xingzuo/{{selTheme.imgKey}}.png" />
   </view>
-  <view class="list" style="background-color: {{selTheme.listBackground}};">
+  <view class="list">
     <view class="item" wx:for="{{xzList}}" wx:for-item="item" wx:for-index="idx" wx:key="idx" data-itemkey="{{item.key}}" bindtap="goPage">
       <view class="item-img" style="background-color:{{item.color}}">
-        <van-image custom-class="item-img-style" round width="88rpx" height="88rpx" fit="cover" src="/static/images/item-list/{{item.key}}.png" />
+        <van-image custom-class="item-img-style" round width="88rpx" height="88rpx" fit="cover" src="/static/images/xingzuo-list/{{item.key}}.png" />
       </view>
       <view class="item-name">{{item.name}}</view>
       <view class="item-time">{{item.time}}</view>

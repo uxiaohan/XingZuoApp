@@ -1,0 +1,152 @@
+.content .head-logo {
+  display: flex;
+}
+
+.content .head-logo .item {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content .head-logo .item .item-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8rpx auto;
+  width: 128rpx;
+  height: 128rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.content .head-logo .item .item-img .item-img-style {
+  margin-top: 8rpx;
+  box-sizing: border-box;
+  padding: 6rpx;
+  border: dashed 4rpx #fff;
+}
+
+.content .head-logo .item .item-text {
+  padding-left: 18rpx;
+  font-size: 36rpx;
+  line-height: 40rpx;
+}
+
+.content .head-logo .item .item-text .item-text-name {
+  font-weight: bolder;
+}
+
+.content .head-logo .item .item-text .item-text-time {
+  font-size: 26rpx;
+}
+
+.content .con {
+  margin-top: 28rpx;
+  box-sizing: border-box;
+  padding: 36rpx 0rpx 56rpx;
+  border-radius: 18rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.content .con .con-tab .con-tab-content {
+  box-sizing: border-box;
+  padding: 36rpx;
+}
+
+.content .con .con-tab .con-tab-content .today-time {
+  width: 100%;
+  color: #5b5b5b;
+  font-size: 28rpx;
+  padding-bottom: 8rpx;
+  font-weight: bolder;
+}
+
+.tabcon-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tabcon-head .tabcon-item {
+  min-height: 48rpx;
+  width: 50%;
+}
+
+.tabcon-head .tabcon-item:nth-of-type(2n) {
+  flex: 1 !important;
+}
+
+.tabcon-head .tabcon-item:nth-last-of-type(1) {
+  width: 100%;
+}
+
+
+
+.tabcon-head .tabcon-item text {
+  font-size: 28rpx;
+}
+
+.tabcon-head .tabcon-item text:nth-of-type(1) {
+  padding-right: 18rpx;
+  font-weight: 600;
+}
+
+.tabcon-con-item {
+  padding-bottom: 18rpx;
+}
+
+.tabcon-con-item .tabcon-con-item-text {
+  padding-left: 8rpx;
+  line-height: 24rpx;
+  font-size: 26rpx;
+}
+
+.tabcon-con-item .tabcon-con-item-openluck {
+  padding-left: 8rpx;
+  font-size: 26rpx;
+  font-weight: bolder;
+}
+
+
+
+
+/* Tab选中字体 */
+.van-tab--active .van-ellipsis {
+  font-weight: bolder;
+}
+
+/* Tab整体背景颜色 */
+/* .van-tabs__scroll {
+  background-color: #fbfbef !important;
+} */
+
+/* 去除整体Border */
+.van-tabs__scroll--card,
+.van-tabs__nav,
+.van-tab,
+.van-tabs__nav--card {
+  border: none !important;
+}
+
+/* 解决文字偏上问题 */
+.van-tab {
+  padding-top: 3rpx !important;
+}
+
+/* 选中div圆角 */
+.tabs-index--van-tab--active {
+  border-radius: 8rpx;
+}
+
+/* 星星间距 */
+.van-rate .van-rate__item {
+  padding-right: 0 !important;
+}
+
+/* 标签ICON右边空隙 */
+.van-tag--large .van-icon {
+  padding-right: 8rpx !important;
+}

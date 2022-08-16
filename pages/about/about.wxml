@@ -1,0 +1,46 @@
+<view class="content" style="background-color: {{selTheme.background}};">
+  <view class="head">
+    <view class="head-title">
+      星座百宝箱
+    </view>
+    <view class="head-con">
+      <view class="head-item" bindtap="goAutherApp" wx:for="{{otherApp}}" wx:for-index="idx" wx:for-item="itm" wx:key="idx" data-itmdata="{{itm}}">
+        <image src="/static/images/about/app/{{itm.key}}.png" mode="widthFix" />
+        <text>{{itm.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="con">
+    <view class="con-item">
+      <view class="con-item-head" style="background-color: {{selTheme.background}};">
+        <view class="con-item-title" style="color: {{selTheme.headFont}};">主创团队</view>
+      </view>
+      <view class="con-item-auther">
+        <view class="auther-item" wx:for="{{autherArr}}" wx:for-index="idx" wx:for-item="itm" wx:key="itm">
+          <image src="/static/images/about/auther/{{itm.avatar}}.png" mode="widthFix" />
+          <text>{{itm.name}}</text>
+        </view>
+      </view>
+      <van-divider />
+      <view class="con-item-title">
+        特别鸣谢
+      </view>
+      <view class="con-item-thank">
+        <view class="thank-head">
+          <image src="/static/images/about/auther/maomi.png" mode="widthFix" />
+          <view class="thank-head-text">
+            <view>感谢以下同学贡献的建议、颜色、奇思妙想！愿我们每个人都有千奇百怪的想法！</view>
+            <view class="strong">注：排名不分前后，倒数第一不怪我！</view>
+          </view>
+        </view>
+        <view class="thank-item-auther">
+          <view class="thank-item" wx:for="{{gongxianArr}}" wx:key="idx" wx:for-index="idx" wx:for-item="itm">
+            <image src="/static/images/about/auther/{{itm.avatar}}.png" mode="widthFix" />
+            <text>{{itm.name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<tab-bar pageKey="about" />

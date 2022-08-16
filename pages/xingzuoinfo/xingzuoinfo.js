@@ -1,4 +1,6 @@
-// pages/home/home.js
+import {
+  get
+} from '../../utils/request'
 const app = getApp()
 Page({
   /**
@@ -6,6 +8,7 @@ Page({
    */
   data: {
     selTheme: app.globalData.selectTheme,
+    value: 3,
     xzList: [{
         "key": "aries",
         "name": "白羊座",
@@ -78,22 +81,45 @@ Page({
         "time": "2.19-3.20",
         "color": "#7cbd9e"
       }
-    ]
+    ],
+    keyItem: {},
+    todayKey: false,
+    nextdayKey: false,
+    weekKey: false,
+    monthKey: false,
+    yearKey: false,
+    loveKey: false,
+    todayObj: {},
+    nextdayObj: {},
+    weekObj: {},
+    monthObj: {},
+    yearObj: {},
+    loveObj: {}
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {},
-  // 页面跳转
-  goPage({
-    currentTarget: {
-      dataset: {
-        itemkey
-      }
-    }
-  }) {
-    wx.navigateTo({
-      url: `/pages/xingzuoinfo/xingzuoinfo?xzKey=${itemkey}`,
+  onLoad(options) {
+    const keyItem = this.data.xzList.filter(itm => itm.key == options.xzKey)[0]
+    this.setData({
+      keyItem
+    })
+    wx.setNavigationBarTitle({
+      title: `${keyItem.name}运势详解`,
+    })
+    this.getData('today')
+  },
+  // Tab切换事件
+  tabChan(e) {
+    this.getData(e.detail.name)
+  },
+  async getData(e) {
+    if (this.data[`${e}Key`]) return 0;
+    const res = await get(`horoscope?type=${this.data.keyItem.key}&time=${e}`);
+    res.success && this.setData({
+      [`${e}Key`]: true,
+      [`${e}Obj`]: res.data
     })
   },
   /**
@@ -145,17 +171,19 @@ Page({
    */
   onShareAppMessage() {
     return {
-      title: '星座运势丨星座速配',
-      path: '/pages/home/home',
-      imageUrl: '/static/images/shareBanner/home.png'
+      title: `${this.data.keyItem.name}运势详解`,
+      path: `/pages/xingzuoinfo/xingzuoinfo?xzKey=${this.data.keyItem.key}`,
+      imageUrl: `/static/images/shareBanner/xingzuo/${this.data.keyItem.key}.jpg`
     }
   },
   // 分享至朋友圈
   onShareTimeline() {
     return {
-      title: "星座运势丨星座速配",
-      query: {},
-      imageUrl: "/static/images/shareBanner/home.png"
+      title: `${this.data.keyItem.name}运势详解`,
+      query: {
+        xzKey: this.data.keyItem.key
+      },
+      imageUrl: `/static/images/shareBanner/xingzuo/${this.data.keyItem.key}.jpg`
     }
   }
 })
