@@ -133,7 +133,7 @@ Page({
    */
   onShareAppMessage() {
     return {
-      title: '星座运势丨星座速配',
+      title: '生肖运势丨生肖详解',
       path: '/pages/shengxiao/shengxiao',
       imageUrl: "/static/images/shareBanner/shengxiao/shengxiao.png"
     }
@@ -141,7 +141,7 @@ Page({
   // 分享至朋友圈
   onShareTimeline() {
     return {
-      title: "星座运势丨星座速配",
+      title: "生肖运势丨生肖详解",
       query: {},
       imageUrl: "/static/images/shareBanner/shengxiao/shengxiao.png"
     }
