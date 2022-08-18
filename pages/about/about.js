@@ -119,6 +119,18 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    return {
+      title: 'About Han',
+      path: '/pages/home/home',
+      imageUrl: '/static/images/about/about.png'
+    }
+  },
+  // 分享至朋友圈
+  onShareTimeline() {
+    return {
+      title: "About Han",
+      query: {},
+      imageUrl: '/static/images/about/about.png'
+    }
   }
 })
