@@ -121,7 +121,7 @@ Page({
   onShareAppMessage() {
     return {
       title: 'About Han',
-      path: '/pages/home/home',
+      path: '/pages/about/about',
       imageUrl: '/static/images/about/about.png'
     }
   },
